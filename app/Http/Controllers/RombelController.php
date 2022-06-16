@@ -14,9 +14,9 @@ class RombelController extends Controller
      */
     public function index()
     {
-        $rombels = Rombel::latest()->paginate(5);
+        $rombels = Rombel::latest()->paginate(10);
         return view('rombels.index', compact('rombels'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+            ->with('i', (request()->input('page', 1) - 1) * 10);
     }
 
     /**

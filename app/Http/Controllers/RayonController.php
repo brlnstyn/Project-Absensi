@@ -14,9 +14,9 @@ class RayonController extends Controller
      */
     public function index()
     {
-        $rayons = Rayon::latest()->paginate(5);
+        $rayons = Rayon::latest()->paginate(10);
         return view('rayons.index', compact('rayons'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+            ->with('i', (request()->input('page', 1) - 1) * 10);
     }
 
     /**

@@ -15,9 +15,9 @@ class PresensiController extends Controller
      */
     public function index()
     {
-        $presensis = Presensi::latest()->paginate(5);
+        $presensis = Presensi::latest()->paginate(10);
         return view('presensis.index', compact('presensis'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+            ->with('i', (request()->input('page', 1) - 1) * 10);
     }
 
     /**
